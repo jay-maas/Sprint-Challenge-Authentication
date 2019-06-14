@@ -19,8 +19,9 @@ function register(req, res) {
 
   Users.add(newUser)
     .then(user => {
-      console.log("test")
-      res.status(201).json(user);
+      res.status(201).json({
+        user: user
+      });
     })
     .catch(error => {
       console.log("error", error)
